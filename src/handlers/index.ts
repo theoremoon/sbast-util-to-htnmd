@@ -5,6 +5,7 @@ import { handleHashTag } from "./hashTag.ts";
 import { handleLink } from "./link.ts";
 import { handleNumberList } from "./numberList.ts";
 import { handlePlain } from "./plain.ts";
+import { handleQuote } from "./quote.ts";
 
 export const nodeHandlers = {
   code: handleCode,
@@ -12,6 +13,7 @@ export const nodeHandlers = {
   formula: handleFormula,
   hashTag: handleHashTag,
   link: handleLink,
-  plain: handlePlain,
   numberList: handleNumberList,
+  plain: handlePlain,
+  quote: handleQuote,
 };
