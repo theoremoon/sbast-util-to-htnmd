@@ -24,10 +24,6 @@
       }
     }
   },
-  "redirects": {
-    "https://deno.land/std/assert/mod.ts": "https://deno.land/std@0.207.0/assert/mod.ts",
-    "https://deno.land/std/testing/asserts.ts": "https://deno.land/std@0.207.0/testing/asserts.ts"
-  },
   "remote": {
     "https://deno.land/std@0.207.0/assert/_constants.ts": "8a9da298c26750b28b326b297316cdde860bc237533b07e1337c021379e6b2a9",
     "https://deno.land/std@0.207.0/assert/_diff.ts": "58e1461cc61d8eb1eacbf2a010932bf6a05b79344b02ca38095f9b805795dc48",
@@ -61,7 +57,6 @@
     "https://deno.land/std@0.207.0/assert/unimplemented.ts": "d56fbeecb1f108331a380f72e3e010a1f161baa6956fd0f7cf3e095ae1a4c75a",
     "https://deno.land/std@0.207.0/assert/unreachable.ts": "4600dc0baf7d9c15a7f7d234f00c23bca8f3eba8b140286aaca7aa998cf9a536",
     "https://deno.land/std@0.207.0/fmt/colors.ts": "34b3f77432925eb72cf0bfb351616949746768620b8e5ead66da532f93d10ba2",
-    "https://deno.land/std@0.207.0/testing/asserts.ts": "605bbd2ef0695e2a4324d810c4ad22e56041d51afb9584fc0b4e81084b14b1d6",
     "https://esm.sh/@progfay/scrapbox-parser@8.1.0": "30f6852b513b798c3c485dcd9edd3e2726dd9a7c2fd201d6e09eb4cb2ce7cc37",
     "https://esm.sh/v134/@progfay/scrapbox-parser@8.1.0/denonext/scrapbox-parser.mjs": "517e4543139161696b737ec46f7cb2b916eedb255a59da5d95a16bca5b2ca0a6"
   }

@@ -1,5 +1,5 @@
 {
   "tasks": {
-    "check": "deno check --all ./src/index.ts"
+    "check": "deno check --all ./mod.ts"
   }
 }

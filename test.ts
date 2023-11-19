@@ -1,5 +1,5 @@
-import { toHatenaMarkdown } from "./src/index.ts";
-import { assertEquals } from "https://deno.land/std/assert/mod.ts";
+import { toHatenaMarkdown } from "./mod.ts";
+import { assertEquals } from "https://deno.land/std@0.207.0/assert/mod.ts";
 import { blockquote, heading, paragraph, root, text } from "npm:mdast-builder";
 
 Deno.test("quote", () => {

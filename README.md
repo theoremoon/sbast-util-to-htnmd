@@ -8,7 +8,7 @@ Convert from Scrapbox AST by [@progfay/scrapbox-parser](https://github.com/progf
 import stringify from "npm:remark-stringify";
 import { unified } from "npm:unified";
 import { parse } from "https://esm.sh/@progfay/scrapbox-parser@8.1.0";
-import { toHatenaMarkdown } from "https://raw.githubusercontent.com/theoremoon/sbast-util-to-htnmd/master/src/index.ts";
+import { toHatenaMarkdown } from "https://raw.githubusercontent.com/theoremoon/sbast-util-to-htnmd/v0.1.0/src/mod.ts";
 
 if (Deno.args.length === 0) {
   console.log(`Usage: ${Deno.execPath()} <scrapbox>`);
