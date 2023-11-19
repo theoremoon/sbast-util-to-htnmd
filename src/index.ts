@@ -16,16 +16,18 @@ const unspreadListItem: typeof listItem = (items) => {
 
 export function toHatenaMarkdown(
   page: Page,
-  nodeHandlers = defaultNodeHandlers,
-  decorationHandlers = defaultDecorationHandlers,
-  blockHandlers = defaultBlockHandlers,
+  option = {
+    nodeHandlers: defaultNodeHandlers,
+    decorationHandlers: defaultDecorationHandlers,
+    blockHandlers: defaultBlockHandlers,
+  },
 ) {
   const transformer: Transformer = {
     // deno-lint-ignore no-explicit-any
-    nodeHandlers: nodeHandlers as any,
+    nodeHandlers: option.nodeHandlers as any,
     // deno-lint-ignore no-explicit-any
-    decorationHandlers: decorationHandlers as any,
-    blockHandlers: blockHandlers,
+    decorationHandlers: option.decorationHandlers as any,
+    blockHandlers: option.blockHandlers,
     handleNode(node) {
       const handler = transformer.nodeHandlers[node.type];
       if (!handler) {
