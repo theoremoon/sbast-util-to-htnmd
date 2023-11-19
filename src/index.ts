@@ -37,7 +37,7 @@ export function toHatenaMarkdown(
     handleDecoration(decoration, children) {
       const handler = transformer.decorationHandlers[decoration];
       if (!handler) {
-        console.log(`decoration handler for node [${decoration}] is missing`);
+        console.log(`decoration handler for [${decoration}] is missing`);
         return paragraph([text(`deco:[${decoration}]`), ...children]);
       }
       return handler(children);
