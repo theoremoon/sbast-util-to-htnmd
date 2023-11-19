@@ -6,14 +6,10 @@ import { decorationHandlers } from "./decorationHandlers/index.ts";
 import { Transformer } from "./type.ts";
 import { blockHandlers } from "./blockHandlers/index.ts";
 
-export const defaultNodeHandlers = nodeHandlers;
-export const defaultDecorationHandlers = decorationHandlers;
-export const defaultBlockHandlers = blockHandlers;
-
 export const defaultHandlers = {
-  nodeHandlers: defaultNodeHandlers,
-  decorationHandlers: defaultDecorationHandlers,
-  blockHandlers: defaultBlockHandlers,
+  nodeHandlers,
+  decorationHandlers,
+  blockHandlers,
 };
 
 const unspreadListItem: typeof listItem = (items) => {
