@@ -10,24 +10,26 @@ export const defaultNodeHandlers = nodeHandlers;
 export const defaultDecorationHandlers = decorationHandlers;
 export const defaultBlockHandlers = blockHandlers;
 
+export const defaultHandlers = {
+  nodeHandlers: defaultNodeHandlers,
+  decorationHandlers: defaultDecorationHandlers,
+  blockHandlers: defaultBlockHandlers,
+};
+
 const unspreadListItem: typeof listItem = (items) => {
   return { ...listItem(items), spread: false };
 };
 
 export function toHatenaMarkdown(
   page: Page,
-  option = {
-    nodeHandlers: defaultNodeHandlers,
-    decorationHandlers: defaultDecorationHandlers,
-    blockHandlers: defaultBlockHandlers,
-  },
+  handlers = defaultHandlers,
 ) {
   const transformer: Transformer = {
     // deno-lint-ignore no-explicit-any
-    nodeHandlers: option.nodeHandlers as any,
+    nodeHandlers: handlers.nodeHandlers as any,
     // deno-lint-ignore no-explicit-any
-    decorationHandlers: option.decorationHandlers as any,
-    blockHandlers: option.blockHandlers,
+    decorationHandlers: handlers.decorationHandlers as any,
+    blockHandlers: handlers.blockHandlers,
     handleNode(node) {
       const handler = transformer.nodeHandlers[node.type];
       if (!handler) {
