@@ -7,6 +7,8 @@ export function handleDecoration(
 ) {
   return transformer.handleDecoration(
     node.decos[0],
-    node.nodes.map((n) => transformer.handleNode(n)),
+    node.nodes.map((n) => transformer.handleNode(n)).flatMap((x) =>
+      Array.isArray(x) ? x : [x]
+    ),
   );
 }

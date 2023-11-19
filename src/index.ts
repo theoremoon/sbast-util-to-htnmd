@@ -6,10 +6,16 @@ import { decorationHandlers } from "./decorationHandlers/index.ts";
 import { Transformer } from "./type.ts";
 import { blockHandlers } from "./blockHandlers/index.ts";
 
-export const defaultHandlers = {
-  nodeHandlers,
+export const defaultHandlers: {
+  nodeHandlers: Transformer["nodeHandlers"];
+  decorationHandlers: Transformer["decorationHandlers"];
+  blockHandlers: Transformer["blockHandlers"];
+} = {
+  // deno-lint-ignore no-explicit-any
+  nodeHandlers: nodeHandlers as any,
   decorationHandlers,
-  blockHandlers,
+  // deno-lint-ignore no-explicit-any
+  blockHandlers: blockHandlers as any,
 };
 
 const unspreadListItem: typeof listItem = (items) => {
@@ -21,10 +27,8 @@ export function toHatenaMarkdown(
   handlers = defaultHandlers,
 ) {
   const transformer: Transformer = {
-    // deno-lint-ignore no-explicit-any
-    nodeHandlers: handlers.nodeHandlers as any,
-    // deno-lint-ignore no-explicit-any
-    decorationHandlers: handlers.decorationHandlers as any,
+    nodeHandlers: handlers.nodeHandlers,
+    decorationHandlers: handlers.decorationHandlers,
     blockHandlers: handlers.blockHandlers,
     handleNode(node) {
       const handler = transformer.nodeHandlers[node.type];
@@ -77,9 +81,7 @@ export function toHatenaMarkdown(
         const res = handler(block as any, transformer.handleNode, isInList);
 
         if (isInList) {
-          contents.push(
-            Array.isArray(res) ? unspreadListItem(res) : unspreadListItem(res),
-          );
+          contents.push(unspreadListItem(res));
         } else {
           contents.push(res as Node);
         }

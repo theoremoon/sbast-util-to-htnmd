@@ -22,18 +22,23 @@ function handleTable() {
 
 function handleLine(
   line: Line,
-  handleNode: (node: SBNode) => Node,
+  handleNode: (node: SBNode) => Node | Node[],
   isInList: boolean,
 ) {
-  const res: Node[] = [];
+  const children: Node[] = [];
   for (const node of line.nodes) {
-    res.push(handleNode(node));
+    const res = handleNode(node);
+    if (Array.isArray(res)) {
+      children.push(...res);
+    } else {
+      children.push(res);
+    }
   }
 
   if (isInList) {
-    return res;
+    return children;
   } else {
-    return paragraph(res);
+    return paragraph(children);
   }
 }
 

@@ -9,6 +9,6 @@ import { Node } from "npm:@types/mdast";
 export function handleQuote(node: QuoteNode, transformer: Transformer) {
   const children: Node[] = node.nodes.map((n: SBNode) =>
     transformer.handleNode(n)
-  );
+  ).flatMap((x) => Array.isArray(x) ? x : [x]);
   return blockquote(children);
 }
