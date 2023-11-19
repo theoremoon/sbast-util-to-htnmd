@@ -16,7 +16,6 @@ const unspreadListItem: typeof listItem = (items) => {
 
 export function toHatenaMarkdown(
   page: Page,
-  defaultMetadata = {},
   nodeHandlers = defaultNodeHandlers,
   decorationHandlers = defaultDecorationHandlers,
   blockHandlers = defaultBlockHandlers,
@@ -43,7 +42,6 @@ export function toHatenaMarkdown(
       }
       return handler(children);
     },
-    metadata: defaultMetadata,
   };
 
   const handleBlocks = (
@@ -95,5 +93,5 @@ export function toHatenaMarkdown(
   };
 
   const { node: rootNode } = handleBlocks(0, 0);
-  return { ast: rootNode as Root, metadata: transformer.metadata };
+  return rootNode as Root;
 }

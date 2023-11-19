@@ -10,7 +10,7 @@ if (Deno.args.length === 0) {
 
 const sb = Deno.readTextFileSync(Deno.args[0]);
 const sbast = parse(sb);
-const { ast: mdast } = toHatenaMarkdown(sbast);
+const mdast = toHatenaMarkdown(sbast);
 
 const processor = unified().use(stringify, {});
 

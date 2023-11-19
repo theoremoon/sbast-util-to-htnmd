@@ -30,5 +30,4 @@ export type Transformer = {
     decoration: Decoration,
     children: Node[],
   ) => Node;
-  metadata: object;
 };
