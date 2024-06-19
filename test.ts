@@ -1,6 +1,6 @@
 import { toHatenaMarkdown } from "./mod.ts";
 import { assertEquals } from "https://deno.land/std@0.207.0/assert/mod.ts";
-import { blockquote, heading, paragraph, root, text } from "npm:mdast-builder";
+import { blockquote, heading, paragraph, root, text, link } from "npm:mdast-builder";
 
 Deno.test("quote", () => {
   const mdast = toHatenaMarkdown([
@@ -21,6 +21,19 @@ Deno.test("quote", () => {
         },
       ],
     },
+    {
+      indent: 0,
+      type: "line",
+      nodes: [
+        {
+          type: "link",
+          raw: "[リンク]",
+          pathType: "relative",
+          href: "リンク",
+          content: "リンク",
+        },
+      ],
+    },
   ]);
   assertEquals(
     mdast,
@@ -29,6 +42,9 @@ Deno.test("quote", () => {
         blockquote([
           text("hello"),
         ]),
+      ]),
+      paragraph([
+        link("/entry/%E3%83%AA%E3%83%B3%E3%82%AF", "", text("リンク")),
       ]),
     ]),
   );

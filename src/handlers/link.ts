@@ -10,7 +10,7 @@ export function handleLink(node: LinkNode) {
         return link(node.href, "", text(node.content));
       }
     case "relative":
-      return link("/entry/" + node.href, "", text(node.href));
+      return link("/entry/" + encodeURI(node.href), "", text(node.href));
     case "root":
       return text("root" + node.raw);
   }
