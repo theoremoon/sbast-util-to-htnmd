@@ -1,7 +1,7 @@
 {
-  "version": "4",
+  "version": "5",
   "specifiers": {
-    "jsr:@std/regexp@^1.0.1": "1.0.1",
+    "jsr:@std/regexp@*": "1.0.1",
     "npm:@types/mdast@*": "4.0.4",
     "npm:mdast-builder@*": "1.1.1"
   },
@@ -62,10 +62,5 @@
     "https://deno.land/std@0.207.0/fmt/colors.ts": "34b3f77432925eb72cf0bfb351616949746768620b8e5ead66da532f93d10ba2",
     "https://esm.sh/@progfay/scrapbox-parser@8.1.0": "dc73203950dcca15e4896cd6cd4ff25fb9cb41d43650f46bd293000caee5eb72",
     "https://esm.sh/@progfay/scrapbox-parser@8.1.0/denonext/scrapbox-parser.mjs": "c5eaa01edea8fb25c4836167a51be99bc5f9b8d22f4cb854636619f013c77a72"
-  },
-  "workspace": {
-    "dependencies": [
-      "jsr:@std/regexp@^1.0.1"
-    ]
   }
 }

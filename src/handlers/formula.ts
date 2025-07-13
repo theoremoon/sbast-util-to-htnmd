@@ -1,6 +1,6 @@
 import type { FormulaNode } from "https://esm.sh/@progfay/scrapbox-parser@8.1.0";
 import { html } from "npm:mdast-builder";
-import { escape } from "@std/regexp/escape";
+import { escape } from "jsr:@std/regexp/escape";
 
 function escapeFormula(formula: string) {
   const hasNewLine = formula.indexOf("\\\\") !== -1;
