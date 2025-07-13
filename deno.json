@@ -1,5 +1,8 @@
 {
   "tasks": {
     "check": "deno check --all ./mod.ts"
+  },
+  "imports": {
+    "@std/regexp": "jsr:@std/regexp@^1.0.1"
   }
 }

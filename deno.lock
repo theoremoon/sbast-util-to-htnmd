@@ -1,27 +1,30 @@
 {
-  "version": "3",
-  "packages": {
-    "specifiers": {
-      "npm:@types/mdast": "npm:@types/mdast@4.0.4",
-      "npm:mdast-builder": "npm:mdast-builder@1.1.1"
+  "version": "4",
+  "specifiers": {
+    "jsr:@std/regexp@^1.0.1": "1.0.1",
+    "npm:@types/mdast@*": "4.0.4",
+    "npm:mdast-builder@*": "1.1.1"
+  },
+  "jsr": {
+    "@std/regexp@1.0.1": {
+      "integrity": "5179d823465085c5480dafb44438466e83c424fadc61ba31f744050ecc0f596d"
+    }
+  },
+  "npm": {
+    "@types/mdast@4.0.4": {
+      "integrity": "sha512-kGaNbPh1k7AFzgpud/gMdvIm5xuECykRR+JnWKQno9TAXVa6WIVCGTPvYGekIDL4uwCZQSYbUxNBSb1aUo79oA==",
+      "dependencies": [
+        "@types/unist"
+      ]
     },
-    "npm": {
-      "@types/mdast@4.0.4": {
-        "integrity": "sha512-kGaNbPh1k7AFzgpud/gMdvIm5xuECykRR+JnWKQno9TAXVa6WIVCGTPvYGekIDL4uwCZQSYbUxNBSb1aUo79oA==",
-        "dependencies": {
-          "@types/unist": "@types/unist@2.0.10"
-        }
-      },
-      "@types/unist@2.0.10": {
-        "integrity": "sha512-IfYcSBWE3hLpBg8+X2SEa8LVkJdJEkT2Ese2aaLs3ptGdVtABxndrMaxuFlQ1qdFf9Q5rDvDpxI3WwgvKFAsQA==",
-        "dependencies": {}
-      },
-      "mdast-builder@1.1.1": {
-        "integrity": "sha512-a3KBk/LmYD6wKsWi8WJrGU/rXR4yuF4Men0JO0z6dSZCm5FrXXWTRDjqK0vGSqa+1M6p9edeuypZAZAzSehTUw==",
-        "dependencies": {
-          "@types/unist": "@types/unist@2.0.10"
-        }
-      }
+    "@types/unist@2.0.11": {
+      "integrity": "sha512-CmBKiL6NNo/OqgmMn95Fk9Whlp2mtvIv+KNpQKN2F4SjvrEesubTRWGYSg+BnWZOnlCaSTU1sMpsBOzgbYhnsA=="
+    },
+    "mdast-builder@1.1.1": {
+      "integrity": "sha512-a3KBk/LmYD6wKsWi8WJrGU/rXR4yuF4Men0JO0z6dSZCm5FrXXWTRDjqK0vGSqa+1M6p9edeuypZAZAzSehTUw==",
+      "dependencies": [
+        "@types/unist"
+      ]
     }
   },
   "remote": {
@@ -57,7 +60,12 @@
     "https://deno.land/std@0.207.0/assert/unimplemented.ts": "d56fbeecb1f108331a380f72e3e010a1f161baa6956fd0f7cf3e095ae1a4c75a",
     "https://deno.land/std@0.207.0/assert/unreachable.ts": "4600dc0baf7d9c15a7f7d234f00c23bca8f3eba8b140286aaca7aa998cf9a536",
     "https://deno.land/std@0.207.0/fmt/colors.ts": "34b3f77432925eb72cf0bfb351616949746768620b8e5ead66da532f93d10ba2",
-    "https://esm.sh/@progfay/scrapbox-parser@8.1.0": "af22a3333102047017043e3b4ea146deb510a50370f8e4afa8287798484f3675",
-    "https://esm.sh/v135/@progfay/scrapbox-parser@8.1.0/denonext/scrapbox-parser.mjs": "517e4543139161696b737ec46f7cb2b916eedb255a59da5d95a16bca5b2ca0a6"
+    "https://esm.sh/@progfay/scrapbox-parser@8.1.0": "dc73203950dcca15e4896cd6cd4ff25fb9cb41d43650f46bd293000caee5eb72",
+    "https://esm.sh/@progfay/scrapbox-parser@8.1.0/denonext/scrapbox-parser.mjs": "c5eaa01edea8fb25c4836167a51be99bc5f9b8d22f4cb854636619f013c77a72"
+  },
+  "workspace": {
+    "dependencies": [
+      "jsr:@std/regexp@^1.0.1"
+    ]
   }
 }
